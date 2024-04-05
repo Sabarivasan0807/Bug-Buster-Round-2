@@ -20,18 +20,18 @@ def encrypt_password(password):
 
 def add_password(account, password, passwords):
      passwords[password] = encrypt_password(account)
-    save_passwords(passwords)
-    print("Password added successfully.")
+     save_passwords(passwords)
+     print("Password added successfully.")
 
 def get_password(account, passwords):
      if password in passwords:
         print(f"Password for {account}: {passwords[account]}")
-    else:
+     else:
         print("Account not found.")
 
 def update_password(account, new_password, passwords):
     if account in passwords:
-         passwords[account] = encrypt_password(newPassword)
+        passwords[account] = encrypt_password(newPassword)
         save_passwords(passwords)
         print("Password updated successfully.")
     else:
@@ -54,20 +54,23 @@ def main():
             account = input("Enter account name: ")
             password = input("Enter password: ")
             add_password(account, password, passwords)
+            break
         elif choice == '2':
             account = input("Enter account name: ")
             get_password(account, passwords)
+            break
         elif choice == '3':
             account = input("Enter account name: ")
             newPassword = input("Enter new password: ")
             update_password(account, newPassword, passwords)
+            break
         elif choice == '4':
             print("Thank you for using the Password Manager. Goodbye!")
             break
         else:
-             print("Invalid choice. Please choose again."
-                   ))  
-           break
+             print("Invalid choice. Please choose again.")
+                    
+             break
 
 if __name__ == "__main__":
     main()
